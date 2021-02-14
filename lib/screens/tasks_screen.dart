@@ -3,33 +3,25 @@ import "package:provider/widgets/tasks_list.dart";
 import "package:provider/screens/add_task_screen.dart";
 
 class TasksScreen extends StatelessWidget {
-
-  Widget buildBottomSheet(BuildContext context){
-    return Container(
-      child: Center(
-        child: Text("This is a bottom sheet"),
-      ),
-      decoration: BoxDecoration(
-        color: Colors.redAccent,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(10.0),
-          topRight: Radius.circular(10.0)
-        )
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent ,
+      backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //When we click + button we want to add a new task in a new slided box that slides from bottom to center
           // and helps create a new task.
           showModalBottomSheet(
-              context: context,
-              builder: buildBottomSheet,
+            context: context,
+            isScrollControlled: true,
+            builder: (context) => SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                ),
+                child: AddTaskScreen(),
+              ),
+            ),
           );
         },
         backgroundColor: Colors.lightBlueAccent,
@@ -87,6 +79,3 @@ class TasksScreen extends StatelessWidget {
     );
   }
 }
-
-
-
