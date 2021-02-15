@@ -12,7 +12,8 @@ class AddTaskScreen extends StatelessWidget {
         padding: EdgeInsets.all(30.0),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -47,9 +48,7 @@ class AddTaskScreen extends StatelessWidget {
                   fontSize: 20.0,
                 ),
               ),
-              onPressed: () => {
-                print("Button Pressed")
-              },
+              onPressed: () => {print("Button Pressed")},
             ),
           ],
         ),

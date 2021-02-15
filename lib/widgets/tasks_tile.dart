@@ -10,7 +10,7 @@ class TasksTile extends StatelessWidget {
         activeColor: Colors.yellow,
         checkColor: Colors.black,
         focusColor: Colors.orange,
-        value: false,
+        value: false, onChanged: (bool value) {  },
       ),
     );
   }
